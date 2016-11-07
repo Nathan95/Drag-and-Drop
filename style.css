@@ -1,0 +1,26 @@
+      
+      #jigsawPiece1{
+            color:#fff;
+            width: 223px;
+            height: 309px;
+            background-color:#000;
+            position: absolute;
+            z-index: 10000;
+       
+            background-size: contain;
+            left: 747px;
+            top: -30px;
+            
+            
+        }
+      
+      #jigsawDrop1 {
+
+            background: #ff0;
+            width: 165px;
+            height: 200px;
+            /*border:1px dashed #AB0000;*/
+            float: left;
+            
+
+        }

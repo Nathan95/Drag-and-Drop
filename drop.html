@@ -1,4 +1,46 @@
-        
+        <head>
+                
+                <link rel="stylesheet" href="style.css">
+
+        </head>
+
+        <script>
+
+        //DRAG FUNCTION
+
+        function allowDrop(ev) {
+                    ev.preventDefault();
+                  }
+                  
+                  function drag(ev) {
+                    ev.dataTransfer.setData("text", ev.target.id);
+                 
+                  }
+                  
+                  function dropOne(ev) {
+                    ev.preventDefault();
+                    var data = ev.dataTransfer.getData("text");
+                    var content = $("#" + data);
+                   
+                    if(content.selector == "#jigsawPiece1") {
+                        ev.target.appendChild(document.getElementById(data));
+
+                        $("#jigsawPiece1").attr('style', 'left:-20px!important; top: -51px; width:220px;');
+                        $('#jigsawDrop1').velocity("callout.pulse");
+                        $(content.selector).removeClass('left');
+                        
+                        
+                    } else {
+                   
+                    }
+          }
+
+          </script>
+
+        </head>
+        <body>
+
+        <!--HTML ELEMENTS-->
 
         <div id="jigsawDrop1" class="dragGameDrop small-3 left" ondrop="dropOne(event)" ondragover="allowDrop(event)"></div> 
         
@@ -6,4 +48,15 @@
 
          
         <div id="jigsawPiece1" class="dragGameDrag small-3 left"  draggable="true" ondragstart="drag(event)"></div>
+
+            
+            <!--Jquery Includes-->
+            
+            <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script type="text/javascript" src="js/velocity.min.js"></script>
+            <script type="text/javascript" src="js/velocity.ui.min.js"></script>
+        </body>
+
+
  
